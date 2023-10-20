@@ -14,9 +14,9 @@ for ($i = 1; $i <= 10; $i++) {
 echo "<br>";
 for ($tahun = 2000; $tahun <= 2023; $tahun++) {
     if (($tahun % 4 == 0 && $tahun % 100 != 0) || $tahun % 400 == 0) {
-        echo "$tahun adalah tahun kabisat<br>";
+        echo "Tahun $tahun adalah tahun kabisat<br>";
     } else {
-        echo "$tahun bukan tahun kabisat<br>";
+        echo "Tahun $tahun bukan tahun kabisat<br>";
     }
 }
 
