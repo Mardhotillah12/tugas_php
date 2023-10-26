@@ -15,7 +15,7 @@ function kategoriNilai($nilai) {
 }
 
 // Input nilai dari user
-$nilai = 91; // Contoh nilai
+$nilai = 0; // Contoh nilai
 
 // Tentukan kategori nilai
 $kategori = kategoriNilai($nilai);
