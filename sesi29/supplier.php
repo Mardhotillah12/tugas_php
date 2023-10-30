@@ -1,12 +1,12 @@
 <?php
 include "connection.php";
-$query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC");
+$query = mysqli_query($connection, "SELECT * FROM supplier ORDER BY nama ASC");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Data Pelanggan</title>
+	<title>Data Supplier</title>
 	<!-- Tambahkan tautan ke Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -21,12 +21,11 @@ $query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC"
 				<a href="produk.php">Produk</a>
 			</div>
 			<div class="col-md-12">
-				<h3> Data Pelanggan </h3>
+				<h3> Data Supplier </h3>
 				<table class="table table-success table-striped">
 					<thead>
 						<tr>
 							<th width="300px"><b><center>Nama</center></b></th>
-							<th width="100px"><b><center>Jenis Kelamin</center></b></th>
 							<th width="300px"><b><center>Telpon</center></b></th>
 							<th width="300px"><b><center>Alamat</center></b></th>
 						</tr>
@@ -36,7 +35,6 @@ $query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC"
 							<?php while ($data = mysqli_fetch_array($query)) { ?>
 								<tr>
 									<td><center><?php echo $data['nama']; ?></center></td>
-									<td><center><?php echo $data['jenis_kelamin']; ?></center></td>
 									<td><center><?php echo $data['telpon']; ?></center></td>
 									<td><center><?php echo $data['alamat']; ?></center></td>
 								</tr>
