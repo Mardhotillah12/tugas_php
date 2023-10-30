@@ -7,7 +7,6 @@ $query = mysqli_query($connection, "SELECT * FROM supplier ORDER BY nama ASC");
 <html>
 <head>
 	<title>Data Supplier</title>
-	<!-- Tambahkan tautan ke Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -45,7 +44,6 @@ $query = mysqli_query($connection, "SELECT * FROM supplier ORDER BY nama ASC");
 			</div>
 		</div>
 	</div>
-	<!-- Tambahkan tautan ke Bootstrap JS (opsional) -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
