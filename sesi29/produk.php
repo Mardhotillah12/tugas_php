@@ -10,9 +10,7 @@ $query = mysqli_query($connection, "SELECT * FROM produk ORDER BY nama_produk DE
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-	<center>
-        <h1>Memanggil Data Dari Database Ke Dalam Bentuk HTML Bootstrap</h1>
-	<div class="container">
+		<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center mb-5 mt-5">
 				<a href="index.php">Pelanggan</a>
@@ -21,6 +19,8 @@ $query = mysqli_query($connection, "SELECT * FROM produk ORDER BY nama_produk DE
 			</div>
 			<div class="col-md-12">
 				<h3> Data Produk </h3>
+
+				<a href="tambahproduk.php"> Tambah Data </a>
 				<table class="table table-success table-striped">
 					<thead>
 						<tr>
@@ -32,6 +32,7 @@ $query = mysqli_query($connection, "SELECT * FROM produk ORDER BY nama_produk DE
 					</thead>
 					<tbody>
 						<?php if (mysqli_num_rows($query)) { ?>
+							<?php include "connection.php"; { ?>
 							<?php while ($data = mysqli_fetch_array($query)) { ?>
 								<tr>
 									<td><center><?php echo $data['kode_produk']; ?></center></td>
@@ -40,6 +41,7 @@ $query = mysqli_query($connection, "SELECT * FROM produk ORDER BY nama_produk DE
 									<td><center><?php echo $data['stok']; ?></center></td>
 								</tr>
 							<?php } ?>
+						<?php } ?>
 						<?php } ?>
 					</tbody>
 				</table>
