@@ -1,6 +1,5 @@
 <?php
 
-// Menentukan jumlah baris
 $baris = 9;
 for ($i = $baris; $i >= 1; $i--) {
   for ($j = 1; $j <= $i; $j++) {
