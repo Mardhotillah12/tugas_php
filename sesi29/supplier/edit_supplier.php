@@ -26,7 +26,7 @@ $query = mysqli_query($connection,"SELECT * FROM supplier where id='$id'");
             <h1 class="text-center">Edit Data Supplier</h1>
             <form id="form_tambah" action="proses_edit_supplier.php?id=<?= $data['id']?>" method="post">
                 <div class="form-group mb-3">
-                    <div class="form-label">Nama Depan</div>
+                    <div class="form-label">Nama </div>
                     <input type="text" name="nama" data-name="Nama" class="required form-control" value="<?= $data['nama']?>">
                 </div>
                 <div class="form-group mb-3">

@@ -1,12 +1,12 @@
 <?php
 include "connection.php";
-$query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC");
+$query = mysqli_query($connection, "SELECT * FROM supplier ORDER BY nama ASC");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Pelanggan</title>
+    <title>Data Supplier</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .navbar {
@@ -46,14 +46,13 @@ $query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC"
 
     <div class="container">
         <div class="m-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-            <h1 class="text-center">Data Pelanggan</h1>
-            <a href="tambah.php" class="btn btn-primary btn-sm mb-3">+ Tambah Data</a>
+            <h1 class="text-center">Data Supplier</h1>
+            <a href="tambah_supplier.php" class="btn btn-primary btn-sm mb-3">+ Tambah Data</a>
             <table class="table table-hover" id="myTable">
                 <thead>
                     <tr class="text-center align-middle">
                         <th class="text-center" scope="col"> Nama </th>
-                        <th class="text-center" scope="col"> Jenis Kelamin </th>
-                        <th class="text-center" scope="col"> Telpon  </th>
+                        <th class="text-center" scope="col"> Telpon </th>
                         <th class="text-center" scope="col"> Alamat </th>
                         <th class="text-center" scope="col"> Aksi </th>
                     </tr>
@@ -63,25 +62,23 @@ $query = mysqli_query($connection, "SELECT * FROM pelanggan ORDER BY alamat ASC"
                         <?php while ($data = mysqli_fetch_array($query)) { ?>
                             <tr>
                                 <td class="text-center align-middle"><?= $data['nama'] ?></td>
-                                <td class="text-center align-middle"><?= $data['jenis_kelamin'] ?></td>
                                 <td class="text-center align-middle"><?= $data['telpon'] ?></td>
                                 <td class="text-center align-middle"><?= $data['alamat'] ?></td>
                                 <td width="200px" class="text-center align-middle">
-                                    <a href="edit_pelanggan.php?id=<?= $data['id'] ?>" class="btn btn-warning btn-sm text-white">Edit<i class="bi bi-pencil-square"></i></a>
-                                    <a href="delete_pelanggan.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Hapus<i class="bi bi-trash"></i></a>
+                                    <a href="edit_supplier.php?id=<?= $data['id'] ?>" class="btn btn-warning btn-sm text-white">Edit<i class="bi bi-pencil-square"></i></a>
+                                    <a href="delete_supplier.php?id=<?= $data['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Hapus<i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
                     <?php } else { ?>
                         <tr>
-                            <td colspan="5" class="text-center">Tidak ada data pelanggan.</td>
+                            <td colspan="4" class="text-center">Tidak ada data supplier.</td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
